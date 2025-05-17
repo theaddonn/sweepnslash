@@ -1,0 +1,38 @@
+pack.name=Sweep 'N Slash - 리소스 팩
+pack.description=자바 에디션 전투를 베드락 에디션에서 경험해보세요!
+
+attribute.name.generic.attackDamage=§r
+
+sweepnslash.tipmessage=§e%s §f명령어를 입력하여 §3Sweep §f'N §6Slash §f설정 화면 열기
+sweepnslash.configmenutitle=Sweep 'N Slash 설정
+sweepnslash.toggleaddon=애드온 활성화
+sweepnslash.shieldbreakspecial=도끼 대 방패에 쿨다운 적용
+sweepnslash.toggledebugmode=디버그 모드 활성화
+sweepnslash.excludepetfromsweep=휩쓸기 공격에서 길들여진 몹 무시
+sweepnslash.tipmessagetoggle=세계 입장 시 팁 메세지 표시
+sweepnslash.indicatorstyle=공격 지표
+sweepnslash.crosshair=십자선
+sweepnslash.hotbar=단축 바
+sweepnslash.geyser=Geyser
+sweepnslash.none=비활성화
+sweepnslash.sweepparticles=휩쓸기 공격 입자
+sweepnslash.enchantedhitparticles=마법 부여 공격 입자
+sweepnslash.damageindicatorparticles=피해 입자
+sweepnslash.critparticles=치명타 공격 입자
+sweepnslash.critsounds=치명타 공격 효과음
+sweepnslash.sweepRGBtitle=휩쓸기 공격 입자 색상
+sweepnslash.nan=§cNaN(Not a Number)가 휩쓸기 공격 입자 색상에 입력되었습니다. 0으로 설정합니다.
+sweepnslash.saveconfig=저장
+sweepnslash.canceled=§c설정이 취소되었습니다.
+sweepnslash.saved=§a설정이 저장되었습니다.
+sweepnslash.configopened=채팅 화면 외부에 설정 메뉴가 열렸습니다.
+sweepnslash.bowhitsound=화살 명중 효과음
+sweepnslash.operatortoggleheader=고급 애드온 설정
+sweepnslash.generaltoggleheader=일반 설정
+sweepnslash.personaltoggleheader=개인 설정
+sweepnslash.currentversion=현재 버전:§e %s
+
+sweepnslash.shieldbreakspecial.tooltip=도끼로 방패를 공격할 때 공격 쿨다운이 84.8%% 이하로 떨어진 상태가 아닐 경우에만 방패를 무력화하도록 합니다.
+sweepnslash.toggledebugmode.tooltip=개발자를 위한 디버그 모드입니다. 콘텐츠 로그에 여러 정보를 출력하며, DPS 실험 기능을 활성화합니다. ('sns:testdamage' 스크립트 이벤트)
+sweepnslash.excludepetfromsweep.tooltip=길들여진 몹이 휩쓸기 공격에 피해를 받지 않도록 합니다.
+sweepnslash.indicatorstyle.tooltip=공격 지표의 모양을 변경합니다. UI에 문제가 생길 경우 Geyser를 시도해보세요.
