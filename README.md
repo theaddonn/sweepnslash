@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AnotherSeawhite/sweepnslash/master/sweepnslash_logo.png" alt="Image" width="850" height="453" />
+  <img src="https://raw.githubusercontent.com/AnotherSeawhite/sweepnslash/master/sweepnslash_logo.png" alt="Image" width="425" height="226" />
 </div>
 
 Sweep 'N Slash is a total conversion Add-On that introduces some of the combat aspects from Java Edition's 1.9 Combat Update into Bedrock Edition.
