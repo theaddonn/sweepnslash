@@ -1,7 +1,7 @@
 import { world } from '@minecraft/server';
 import { debug } from './mathAndCalculations.js';
-import { WeaponStatsSerializer } from '../IPC/weapon_stats.ipc';
-import { IPC, PROTO } from '../IPC/ipc';
+import { WeaponStatsSerializer } from '../IPC/weapon_stats.ipc.js';
+import { IPC, PROTO } from 'mcbe-ipc';
 import { importStats } from '../importStats.js';
 
 export const weaponStats = [];

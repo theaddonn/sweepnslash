@@ -2,31 +2,42 @@
 // https://github.com/protobi/lambertw/
 
 const GSL_DBL_EPSILON = 2.2204460492503131e-16;
-const one_over_E = 1 / Math.E;
+const ONE_OVER_E = 1.0 / Math.E;
 
-function halley_iteration(x, w_initial, max_iters) {
-    var w = w_initial,
-        i;
+interface IterationResult {
+    val: number;
+    err: number;
+    iters: number;
+    success: boolean;
+}
 
-    var result = {};
+/**
+ * Performs the Halley iteration to compute the Lambert W function
+ * @param x The input value
+ * @param w_initial Initial approximation of W
+ * @param max_iters Maximum number of iterations
+ * @returns Result of the iteration
+ */
+function halley_iteration(x: number, w_initial: number, max_iters: number): IterationResult {
+    let w = w_initial;
+    let i = 0;
 
     for (i = 0; i < max_iters; i++) {
-        var tol;
-        var e = Math.exp(w);
-        var p = w + 1.0;
-        var t = w * e - x;
+        const e = Math.exp(w);
+        const p = w + 1.0;
+        let t = w * e - x;
 
         if (w > 0) {
-            t = t / p / e;
-            /* Newton iteration */
+            // Newton iteration
+            t = t / (p * e);
         } else {
-            t /= e * p - (0.5 * (p + 1.0) * t) / p;
-            /* Halley iteration */
+            // Halley iteration
+            t = t / (e * p - (0.5 * (p + 1.0) * t) / p);
         }
 
         w -= t;
 
-        tol = GSL_DBL_EPSILON * Math.max(Math.abs(w), 1.0 / (Math.abs(p) * e));
+        const tol = GSL_DBL_EPSILON * Math.max(Math.abs(w), 1.0 / (Math.abs(p) * e));
 
         if (Math.abs(t) < tol) {
             return {
@@ -37,8 +48,8 @@ function halley_iteration(x, w_initial, max_iters) {
             };
         }
     }
-    /* should never get here */
 
+    /* should never get here */
     return {
         val: w,
         err: Math.abs(w),
@@ -47,10 +58,11 @@ function halley_iteration(x, w_initial, max_iters) {
     };
 }
 
-/* series which appears for q near zero;
+/**
+ * Series which appears for q near zero;
  * only the argument is different for the different branches
  */
-function series_eval(r) {
+function series_eval(r: number): number {
     const c = [
         -1.0, 2.331643981597124203363536062168, -1.812187885639363490240191647568,
         1.936631114492359755363277457668, -2.353551201881614516821543561516,
@@ -65,46 +77,54 @@ function series_eval(r) {
     return c[0] + r * t_1;
 }
 
-/*-*-*-*-*-*-*-*-*-*-*-* Functions with Error Codes *-*-*-*-*-*-*-*-*-*-*-*/
+/**
+ * Computes the principal branch of the Lambert W function (W0)
+ * @param x Input value
+ * @returns Result containing the computed value and error information
+ */
+function gsl_sf_lambert_W0_e(x: number): IterationResult {
+    const q = x + ONE_OVER_E;
 
-function gsl_sf_lambert_W0_e(x) {
-    const one_over_E = 1.0 / Math.E;
-    const q = x + one_over_E;
-
-    var result = {};
-
-    if (x == 0.0) {
-        result.val = 0.0;
-        result.err = 0.0;
-        result.success = true;
-        return result;
+    if (x === 0.0) {
+        return {
+            val: 0.0,
+            err: 0.0,
+            iters: 0,
+            success: true,
+        };
     } else if (q < 0.0) {
         /* Strictly speaking this is an error. But because of the
-         * arithmetic operation connecting x and q, I am a little
+         * arithmetic operation connecting x and q, we are a little
          * lenient in case of some epsilon overshoot. The following
-         * answer is quite accurate in that case. Anyway, we have
-         * to return GSL_EDOM.
+         * answer is quite accurate in that case.
          */
-        result.val = -1.0;
-        result.err = Math.sqrt(-q);
-        result.success = false; // GSL_EDOM
-        return result;
-    } else if (q == 0.0) {
-        result.val = -1.0;
-        result.err = GSL_DBL_EPSILON;
-        /* cannot error is zero, maybe q == 0 by "accident" */
-        result.success = true;
-        return result;
+        return {
+            val: -1.0,
+            err: Math.sqrt(-q),
+            iters: 0,
+            success: false, // GSL_EDOM
+        };
+    } else if (q === 0.0) {
+        return {
+            val: -1.0,
+            err: GSL_DBL_EPSILON,
+            iters: 0,
+            /* cannot error is zero, maybe q == 0 by "accident" */
+            success: true,
+        };
     } else if (q < 1.0e-3) {
         /* series near -1/E in sqrt(q) */
         const r = Math.sqrt(q);
-        result.val = series_eval(r);
-        result.err = 2.0 * GSL_DBL_EPSILON * Math.abs(result.val);
-        result.success = true;
-        return result;
+        const val = series_eval(r);
+        return {
+            val,
+            err: 2.0 * GSL_DBL_EPSILON * Math.abs(val),
+            iters: 0,
+            success: true,
+        };
     } else {
         const MAX_ITERS = 100;
-        var w;
+        let w: number;
 
         if (x < 1.0) {
             /* obtain initial approximation from series near x=0;
@@ -119,32 +139,38 @@ function gsl_sf_lambert_W0_e(x) {
             if (x > 3.0) w -= Math.log(w);
         }
 
-        return halley_iteration(x, w, MAX_ITERS, result);
+        return halley_iteration(x, w, MAX_ITERS);
     }
 }
 
-function gsl_sf_lambert_Wm1_e(x) {
-    var result = {};
-
+/**
+ * Computes the secondary branch of the Lambert W function (W-1)
+ * @param x Input value
+ * @returns Result containing the computed value and error information
+ */
+function gsl_sf_lambert_Wm1_e(x: number): IterationResult {
     if (x > 0.0) {
         return gsl_sf_lambert_W0_e(x);
-    } else if (x == 0.0) {
-        result.val = 0.0;
-        result.err = 0.0;
-        result.success = true;
-        return result;
+    } else if (x === 0.0) {
+        return {
+            val: 0.0,
+            err: 0.0,
+            iters: 0,
+            success: true,
+        };
     } else {
         const MAX_ITERS = 32;
-        const one_over_E = 1.0 / Math.E;
-        const q = x + one_over_E;
-        var w;
+        const q = x + ONE_OVER_E;
+        let w: number;
 
         if (q < 0.0) {
             /* As in the W0 branch above, return some reasonable answer anyway. */
-            result.val = -1.0;
-            result.err = Math.sqrt(-q);
-            result.success = false;
-            return result;
+            return {
+                val: -1.0,
+                err: Math.sqrt(-q),
+                iters: 0,
+                success: false,
+            };
         }
 
         if (x < -1.0e-6) {
@@ -159,10 +185,12 @@ function gsl_sf_lambert_Wm1_e(x) {
             w = series_eval(r);
             if (q < 3.0e-3) {
                 /* this approximation is good enough */
-                result.val = w;
-                result.err = 5.0 * GSL_DBL_EPSILON * Math.abs(w);
-                result.success = true;
-                return result;
+                return {
+                    val: w,
+                    err: 5.0 * GSL_DBL_EPSILON * Math.abs(w),
+                    iters: 0,
+                    success: true,
+                };
             }
         } else {
             /* Obtain initial approximation from asymptotic near zero. */
@@ -175,10 +203,20 @@ function gsl_sf_lambert_Wm1_e(x) {
     }
 }
 
-export function lambertW0(x) {
+/**
+ * Computes the principal branch of the Lambert W function
+ * @param x Input value >= -1/e
+ * @returns W0(x) value
+ */
+export function lambertW0(x: number): number {
     return gsl_sf_lambert_W0_e(x).val;
 }
 
-export function lambertWm1(x) {
+/**
+ * Computes the secondary branch of the Lambert W function
+ * @param x Input value >= -1/e and <= 0
+ * @returns W-1(x) value
+ */
+export function lambertWm1(x: number): number {
     return gsl_sf_lambert_Wm1_e(x).val;
 }

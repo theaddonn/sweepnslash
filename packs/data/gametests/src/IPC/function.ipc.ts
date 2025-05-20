@@ -1,7 +1,6 @@
-import { PROTO } from './ipc';
+import { PROTO } from 'mcbe-ipc';
 
-/** @type {PROTO.Serializable<Function>} */
-export const FunctionSerializer = {
+export const FunctionSerializer: PROTO.Serializable<Function> = {
     *serialize(value, stream) {
         yield* PROTO.String.serialize(value.toString(), stream);
     },

@@ -3,7 +3,7 @@ import * as mc from '@minecraft/server';
 import { debug, Check, getCooldownTime, selectiveParticle } from './mathAndCalculations.js';
 
 export class CombatManager {
-    static attack(eventData) {
+    static attack(eventData: { player: Player; target: mc.Entity; currentTick: number }) {
         const { player, target, currentTick } = eventData;
 
         const debugMode = world.getDynamicProperty('debug_mode');

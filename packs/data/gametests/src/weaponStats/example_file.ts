@@ -100,7 +100,7 @@ export const exampleArray = [
         }) => {
             let confirmedCrit = cooldown === 1;
 
-            function random(min, max) {
+            function random(min: number, max: number) {
                 return Math.random() * (max - min) + min;
             }
             const rgb = {
@@ -153,13 +153,10 @@ export const exampleArray = [
             inanimate,
             cooldown,
         }) => {
-            if (hit && !crit) {
-                player.sendMessage(target.typeId + ' was hit');
-            } else if (crit) {
-                player.sendMessage('powerful hit!');
-            } else {
-                player.sendMessage(target.typeId + ' was not hit, too bad');
-            }
+            if (hit && !crit) player.sendMessage(target.typeId + ' was hit');
+            else if (crit) player.sendMessage('powerful hit!');
+            else player.sendMessage(target.typeId + ' was not hit, too bad');
+
             sweptEntities.forEach((e) => {
                 player.sendMessage(e.typeId + ' was swept');
             });

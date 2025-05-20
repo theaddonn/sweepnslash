@@ -1,4 +1,4 @@
-import { PROTO } from './ipc';
+import { PROTO } from 'mcbe-ipc';
 import { FunctionSerializer } from './function.ipc';
 
 export const WeaponStatsSerializer = PROTO.Object({

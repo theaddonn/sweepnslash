@@ -24,7 +24,7 @@ export const betterOnBedrock = [
         isWeapon: true,
         sweep: true,
         beforeEffect: () => {
-            function random(min, max) {
+            function random(min: number, max: number) {
                 return Math.random() * (max - min) + min;
             }
             const rand = random(0.5, 1);
