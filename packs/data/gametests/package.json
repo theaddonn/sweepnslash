@@ -8,7 +8,7 @@
     "license": "ISC",
     "dependencies": {
         "@minecraft/server": "2.0.0-rc.1.21.90-preview.25",
-        "@minecraft/server-ui": "1.3.0",
+        "@minecraft/server-ui": "2.0.0-rc.1.21.90-preview.25",
         "mcbe-ipc": "3.0.4"
     }
 }
