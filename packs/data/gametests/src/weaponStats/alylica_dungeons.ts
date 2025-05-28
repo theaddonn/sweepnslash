@@ -1,6 +1,6 @@
 import { WeaponStats } from '../importStats';
 
-export const alylicaDungeons: WeaponStats = [
+export const alylicaDungeons: WeaponStats[] = [
     {
         id: 'dungeons:sword',
         attackSpeed: 1.6,

@@ -1,13 +1,6 @@
 // This file is used to store most of the math and calculation functions for the Add-On to run.
 
-import {
-    system,
-    world,
-    MolangVariableMap,
-    Entity,
-    Player,
-    BiomeTypes,
-} from '@minecraft/server';
+import { system, world, MolangVariableMap, Entity, Player } from '@minecraft/server';
 import { weaponStats } from './weaponStatsHandler.js';
 import { lambertW0, lambertWm1 } from './lambertw.js';
 import { Vector3Utils, clampNumber } from './minecraft-math.js';
@@ -71,9 +64,7 @@ function initializePlayerStatus(player) {
 }
 
 Entity.prototype.getStatus = function () {
-    if (!playerStatus.has(this)) {
-        initializePlayerStatus(this);
-    }
+    if (!playerStatus.has(this)) initializePlayerStatus(this);
     return playerStatus.get(this);
 };
 

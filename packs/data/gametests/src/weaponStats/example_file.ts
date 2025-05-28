@@ -75,7 +75,7 @@ import { WeaponStats } from '../importStats';
 	You can get damage and DPS test in content logs using 'sns:testdamage' scriptevent. This requires Debug Mode enabled.
 */
 
-export const exampleArray: WeaponStats = [
+export const exampleArray: WeaponStats[] = [
     {
         id: 'namespace:example1',
         attackSpeed: 1.6,

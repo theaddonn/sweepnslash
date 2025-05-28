@@ -1,6 +1,6 @@
 import { WeaponStats } from '../importStats';
 
-export const vanilla: WeaponStats = [
+export const vanilla: WeaponStats[] = [
     {
         id: 'minecraft:wooden_sword',
         attackSpeed: 1.6,

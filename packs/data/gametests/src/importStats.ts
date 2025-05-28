@@ -14,18 +14,18 @@ import { trueWeapons } from './weaponStats/true_wp';
 import { vanilla } from './weaponStats/vanilla';
 import { vanillaSpears } from './weaponStats/vanilla_spears';
 
-export const importStats = [
-    { newItems: exampleArray, moduleName: 'example_file' },
-    { newItems: vanilla, moduleName: 'vanilla' },
-    { newItems: betterOnBedrock, moduleName: 'better_on_bedrock' },
-    { newItems: vanillaKnives, moduleName: 'tcc_knives' },
-    { newItems: vanillaThrowingKnives, moduleName: 'tcc_throwing_knives' },
-    { newItems: vanillaBattleAxes, moduleName: 'tcc_battle_axes' },
-    { newItems: flintTools, moduleName: 'tcc_flint_tools' },
-    { newItems: copperTools, moduleName: 'tcc_copper_expansion' },
-    { newItems: vanillaSpears, moduleName: 'vanilla_spears' },
-    { newItems: alylicaDungeons, moduleName: 'alylica_dungeons' },
-    { newItems: trueWeapons, moduleName: 'true_wp' },
+export const importStats: { items: WeaponStats[]; moduleName: string }[] = [
+    { items: exampleArray, moduleName: 'example_file' },
+    { items: vanilla, moduleName: 'vanilla' },
+    { items: betterOnBedrock, moduleName: 'better_on_bedrock' },
+    { items: vanillaKnives, moduleName: 'tcc_knives' },
+    { items: vanillaThrowingKnives, moduleName: 'tcc_throwing_knives' },
+    { items: vanillaBattleAxes, moduleName: 'tcc_battle_axes' },
+    { items: flintTools, moduleName: 'tcc_flint_tools' },
+    { items: copperTools, moduleName: 'tcc_copper_expansion' },
+    { items: vanillaSpears, moduleName: 'vanilla_spears' },
+    { items: alylicaDungeons, moduleName: 'alylica_dungeons' },
+    { items: trueWeapons, moduleName: 'true_wp' },
 ];
 
 /**
@@ -157,4 +157,4 @@ export type WeaponStats = {
         inanimate: boolean;
         cooldown: number; // 0~1, attack charge
     }) => void;
-}[];
+};

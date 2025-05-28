@@ -3,7 +3,7 @@
 import { MolangVariableMap, TicksPerSecond } from '@minecraft/server';
 import { WeaponStats } from '../importStats';
 
-export const betterOnBedrock: WeaponStats = [
+export const betterOnBedrock: WeaponStats[] = [
     {
         id: 'better_on_bedrock:amethyst_sword',
         attackSpeed: 1.6,

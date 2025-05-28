@@ -2,7 +2,7 @@
 
 import { WeaponStats } from '../../importStats';
 
-export const copperTools: WeaponStats = [
+export const copperTools: WeaponStats[] = [
     {
         id: 'tcc_copper_tools:copper_sword',
         attackSpeed: 1.6,

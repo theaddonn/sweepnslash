@@ -2,7 +2,7 @@
 
 import { WeaponStats } from '../../importStats';
 
-export const vanillaThrowingKnives: WeaponStats = [
+export const vanillaThrowingKnives: WeaponStats[] = [
     {
         id: 'tcc_throwing_knives:wooden_throwing_knife',
         attackSpeed: 1.8,

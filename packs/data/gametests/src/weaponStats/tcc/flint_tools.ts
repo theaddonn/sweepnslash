@@ -2,7 +2,7 @@
 
 import { WeaponStats } from '../../importStats';
 
-export const flintTools: WeaponStats = [
+export const flintTools: WeaponStats[] = [
     {
         id: 'tcc_flint_tools:flint_sword',
         attackSpeed: 1.6,
