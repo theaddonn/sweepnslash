@@ -1,4 +1,6 @@
-export const trueWeapons = [
+import { WeaponStats } from '../importStats';
+
+export const trueWeapons: WeaponStats = [
     // Epee
     {
         id: 'true_wp:wooden_epee',

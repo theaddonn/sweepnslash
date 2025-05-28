@@ -1,6 +1,8 @@
 // https://www.curseforge.com/minecraft-bedrock/addons/vanilla-battle-axes
 
-export const vanillaBattleAxes = [
+import { WeaponStats } from '../../importStats';
+
+export const vanillaBattleAxes: WeaponStats = [
     {
         id: 'tcc_battle_axes:wooden_battle_axe',
         attackSpeed: 0.9,

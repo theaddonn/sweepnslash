@@ -1,6 +1,8 @@
 // https://www.curseforge.com/minecraft-bedrock/addons/copper-tools
 
-export const copperTools = [
+import { WeaponStats } from '../../importStats';
+
+export const copperTools: WeaponStats = [
     {
         id: 'tcc_copper_tools:copper_sword',
         attackSpeed: 1.6,

@@ -104,15 +104,12 @@
                         "filter": "gametests",
                         "settings": {
                             "buildOptions": {
-                                "bundle": true,
                                 "dropLabels": ["DEBUG", "LOGGING"],
+                                "bundle": true,
                                 "minify": true
                             },
                             "moduleUUID": "3e35560f-c4b0-4d51-92b4-52e07ac4a84e",
-                            "modules": [
-                                "@minecraft/server@2.0.0-beta",
-                                "@minecraft/server-ui@2.0.0-beta"
-                            ]
+                            "modules": ["@minecraft/server@2.0.0", "@minecraft/server-ui@2.0.0"]
                         }
                     }
                 ]
@@ -127,14 +124,12 @@
                         "filter": "gametests",
                         "settings": {
                             "buildOptions": {
-                                "entryPoints": ["data/gametests/src/main.ts"],
+                                "dropLabels": ["DEBUG", "LOGGING"],
+                                "bundle": true,
                                 "minify": false
                             },
                             "moduleUUID": "3e35560f-c4b0-4d51-92b4-52e07ac4a84e",
-                            "modules": [
-                                "@minecraft/server@2.0.0-beta",
-                                "@minecraft/server-ui@2.0.0-beta"
-                            ]
+                            "modules": ["@minecraft/server@2.0.0", "@minecraft/server-ui@2.0.0"]
                         }
                     }
                 ]

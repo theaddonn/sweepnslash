@@ -40,6 +40,7 @@ world.afterEvents.worldLoad.subscribe(() => {
             }`
         )
     );
+
     if (world.getDynamicProperty('addon_toggle') == undefined) {
         world.setDynamicProperty('addon_toggle', true);
     }
@@ -50,7 +51,7 @@ world.afterEvents.worldLoad.subscribe(() => {
 });
 
 // Initialize dynamic properties
-function initialize(player, dynamicProperty) {
+function initialize(player: Player, dynamicProperty: string) {
     if (player.getDynamicProperty(dynamicProperty) == undefined) {
         player.setDynamicProperty(dynamicProperty, true);
     }
@@ -87,9 +88,8 @@ world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
                     },
                 ],
             });
-        for (const dp of dpArray) {
-            initialize(player, dp);
-        }
+
+        for (const dp of dpArray) initialize(player, dp);
     }
 });
 

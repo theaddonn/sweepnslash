@@ -1,8 +1,9 @@
 // https://www.curseforge.com/minecraft-bedrock/addons/better-on-bedrock
 
 import { MolangVariableMap, TicksPerSecond } from '@minecraft/server';
+import { WeaponStats } from '../importStats';
 
-export const betterOnBedrock = [
+export const betterOnBedrock: WeaponStats = [
     {
         id: 'better_on_bedrock:amethyst_sword',
         attackSpeed: 1.6,
@@ -58,7 +59,7 @@ export const betterOnBedrock = [
         isWeapon: true,
         sweep: true,
         beforeEffect: () => {
-            function random(min, max) {
+            function random(min: number, max: number) {
                 return Math.random() * (max - min) + min;
             }
             const rand = random(0.8, 1);

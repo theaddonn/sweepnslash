@@ -1,4 +1,6 @@
-export const alylicaDungeons = [
+import { WeaponStats } from '../importStats';
+
+export const alylicaDungeons: WeaponStats = [
     {
         id: 'dungeons:sword',
         attackSpeed: 1.6,
@@ -13,7 +15,7 @@ export const alylicaDungeons = [
         isWeapon: true,
         sweep: true,
         beforeEffect: ({ mc }) => {
-            function random(min, max) {
+            function random(min: number, max: number) {
                 return Math.random() * (max - min) + min;
             }
             const rand = random(0.5, 1);
@@ -47,10 +49,10 @@ export const alylicaDungeons = [
 
             if (iframes) return;
 
-            function clampNumber(val, min, max) {
+            function clampNumber(val: number, min: number, max: number) {
                 return Math.max(Math.min(val, Math.max(min, max)), Math.min(min, max));
             }
-            function rng(num) {
+            function rng(num: number) {
                 let min = 0;
                 let max = 100;
                 const math = Math.floor(Math.random() * (max - min) + min);
@@ -194,12 +196,15 @@ export const alylicaDungeons = [
         sweep: true,
         beforeEffect: ({ system, player, target, specialCheck, crit, sprintKnockback }) => {
             if (!crit && !sprintKnockback && specialCheck) {
-                const loc = target.location;
-                player.dimension.spawnParticle('dungeons:swirling', {
-                    x: loc.x,
-                    y: loc.y + 1,
-                    z: loc.z,
+                const dimension = target.dimension;
+                const location = target.location;
+
+                dimension.spawnParticle('dungeons:swirling', {
+                    x: location.x,
+                    y: location.y + 1,
+                    z: location.z,
                 });
+
                 system.run(() => {
                     const vel = target.getVelocity();
                     target.applyKnockback({ x: vel.x, z: vel.y }, vel.y + 0.55);
@@ -254,17 +259,21 @@ export const alylicaDungeons = [
         isWeapon: true,
         beforeEffect: ({ target, iframes }) => {
             if (iframes || target.getEffect('slowness')) return;
+
             target.addEffect('slowness', 66, {
                 amplifier: 1,
                 showParticles: true,
             });
-            const loc = target.location;
-            target.dimension.spawnParticle('dungeons:element_freeze', {
-                x: loc.x,
-                y: loc.y + 1,
-                z: loc.z,
+
+            const dimension = target.dimension;
+            const location = target.location;
+
+            dimension.spawnParticle('dungeons:element_freeze', {
+                x: location.x,
+                y: location.y + 1,
+                z: location.z,
             });
-            target.dimension.playSound('mob.player.hurt_freeze', target.location, {
+            dimension.playSound('mob.player.hurt_freeze', target.location, {
                 volume: 0.33,
             });
         },
@@ -279,12 +288,11 @@ export const alylicaDungeons = [
             target.addTag('prevent_effect');
 
             const hp = target.getComponent('health');
-            const dmgBonus = 0.5 - (hp.currentValue / hp.effectiveMax) * 0.5;
 
-            let doCommittedBonus = false;
-            if (!crit && !iframes && dmgBonus > 0) {
-                doCommittedBonus = true;
-            }
+            if (hp === undefined) return;
+
+            const dmgBonus = 0.5 - (hp.currentValue / hp.effectiveMax) * 0.5;
+            const doCommittedBonus = !crit && !iframes && dmgBonus > 0;
 
             return {
                 critAttack: doCommittedBonus || undefined,
@@ -297,9 +305,7 @@ export const alylicaDungeons = [
         },
         script: ({ system, target }) => {
             system.run(() => {
-                if (target.hasTag('prevent_effect')) {
-                    target.removeTag('prevent_effect');
-                }
+                if (target.hasTag('prevent_effect')) target.removeTag('prevent_effect');
             });
         },
     },
@@ -319,13 +325,13 @@ export const alylicaDungeons = [
         enchantedKnockback: 1.381,
         beforeEffect: ({ player, specialCheck }) => {
             if (specialCheck) {
-                player.dimension.playSound('weapon.obsidian_claymore.hit', player.location, {
+                const dimension = player.dimension;
+                dimension.playSound('weapon.obsidian_claymore.hit', player.location, {
                     pitch: 1.2,
                 });
-                player.dimension.playSound('attack.sweep', player.location, {
-                    pitch: 1.7,
-                });
+                dimension.playSound('attack.sweep', player.location, { pitch: 1.7 });
             }
+
             return {
                 sweepVolume: 0,
             };

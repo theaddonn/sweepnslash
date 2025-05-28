@@ -1,6 +1,8 @@
 // https://www.curseforge.com/minecraft-bedrock/addons/flint-tools
 
-export const flintTools = [
+import { WeaponStats } from '../../importStats';
+
+export const flintTools: WeaponStats = [
     {
         id: 'tcc_flint_tools:flint_sword',
         attackSpeed: 1.6,

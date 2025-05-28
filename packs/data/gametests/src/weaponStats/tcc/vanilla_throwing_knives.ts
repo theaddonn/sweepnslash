@@ -1,6 +1,8 @@
 // https://www.curseforge.com/minecraft-bedrock/addons/vanilla-knives
 
-export const vanillaThrowingKnives = [
+import { WeaponStats } from '../../importStats';
+
+export const vanillaThrowingKnives: WeaponStats = [
     {
         id: 'tcc_throwing_knives:wooden_throwing_knife',
         attackSpeed: 1.8,

@@ -12,10 +12,10 @@ world.afterEvents.worldLoad.subscribe(() => {
     (async function () {
         let logMessages = []; // Stores logs to print once at the end
 
-        for (const yeet of importStats) {
+        for (const stat of importStats) {
             try {
-                const module = await import(`../weaponStats/${yeet.fileName}`);
-                const newItems = module[yeet.arrayName];
+                const newItems = stat.newItems;
+                const arrayName = stat.moduleName;
 
                 if (newItems) {
                     const weaponStatsMap = new Map(weaponStats.map((item) => [item.id, item]));
@@ -23,16 +23,16 @@ world.afterEvents.worldLoad.subscribe(() => {
                     newItems.forEach((newItem) => {
                         if (weaponStatsMap.has(newItem.id)) {
                             Object.assign(weaponStatsMap.get(newItem.id), newItem);
-                        } else {
-                            weaponStats.push(newItem);
-                        }
+                        } else weaponStats.push(newItem);
                     });
-                    logMessages.push(`- "${yeet.arrayName}" loaded from "${yeet.fileName}"`);
+                    logMessages.push(`- "${arrayName}" loaded`);
                 } else {
-                    logMessages.push(`- "${yeet.arrayName}" not found in "${yeet.fileName}"`);
+                    logMessages.push(`- "${arrayName}" not found`);
                 }
             } catch (e) {
-                logMessages.push(`- Failed to load "${yeet.fileName}": ${e.message}`);
+                logMessages.push(
+                    `- Failed to load "${stat.moduleName || 'unknown'}": ${e.message}`
+                );
             }
         }
 
