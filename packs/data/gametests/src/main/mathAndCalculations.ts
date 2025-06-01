@@ -1,6 +1,14 @@
 // This file is used to store most of the math and calculation functions for the Add-On to run.
 
-import { system, world, MolangVariableMap, Entity, Player } from '@minecraft/server';
+import {
+    system,
+    world,
+    MolangVariableMap,
+    Entity,
+    Player,
+    BiomeTypes,
+    EquipmentSlot,
+} from '@minecraft/server';
 import { weaponStats } from './weaponStatsHandler.js';
 import { lambertW0, lambertWm1 } from './lambertw.js';
 import { Vector3Utils, clampNumber } from './minecraft-math.js';
@@ -283,11 +291,10 @@ export function selectiveParticle(
                 if (
                     p.getDynamicProperty(dynamicProperty) == true &&
                     p.dimension.id == dimension
-                ) {
+                )
                     map
                         ? p.spawnParticle(particleId, offsetLocation, map)
                         : p.spawnParticle(particleId, offsetLocation);
-                }
             }
         } catch (e) {} //this error is ignorable
     });
@@ -301,9 +308,8 @@ function selectiveSound(location, dynamicProperty, dimension, soundId, volume = 
                 if (
                     p.getDynamicProperty(dynamicProperty) == true &&
                     p.dimension.id == dimension
-                ) {
+                )
                     p.playSound(soundId, { location, volume });
-                }
             }
         } catch (e) {} //this error is ignorable
     });
@@ -342,7 +348,7 @@ export function toColor(vector3) {
 // Damage Calculation
 // Based on The Minecraft Wiki info
 // https://minecraft.wiki/w/Damage
-export function getCooldownTime(player, baseAttackSpeed = 4) {
+export function getCooldownTime(player: Player, baseAttackSpeed = 4) {
     const haste = Check.effect(player, 'haste');
     const miningFatigue = Check.effect(player, 'mining_fatigue');
 
@@ -366,7 +372,7 @@ export function getCooldownTime(player, baseAttackSpeed = 4) {
 // Return the stats of the weapon from player's weapon.
 Entity.prototype.getItemStats = function () {
     const equippableComp = this.getComponent('equippable');
-    const item = equippableComp?.getEquipment('Mainhand');
+    const item = equippableComp?.getEquipment(EquipmentSlot.Mainhand);
     const stats = weaponStats.find((wep) => wep.id === item?.typeId);
     return { equippableComp, item, stats };
 };
