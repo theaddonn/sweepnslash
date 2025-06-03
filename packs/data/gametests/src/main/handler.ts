@@ -552,6 +552,7 @@ world.afterEvents.projectileHitEntity.subscribe((event) => {
 });
 
 world.afterEvents.entitySpawn.subscribe(({ cause, entity }) => {
+	if (world.getDynamicProperty('addon_toggle') == false) return;
 	if (!entity?.isValid) return;
     
 	const projectileComp = entity?.getComponent("projectile");
