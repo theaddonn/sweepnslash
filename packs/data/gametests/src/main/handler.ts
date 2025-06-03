@@ -555,7 +555,7 @@ world.afterEvents.entitySpawn.subscribe(({ cause, entity }) => {
 	if (world.getDynamicProperty('addon_toggle') == false) return;
 	if (!entity?.isValid) return;
     
-	const projectileComp = entity?.getComponent("projectile");
+	const projectileComp = entity?.getComponent('projectile');
 	const owner = projectileComp?.owner;
     if (!owner) return;
     
@@ -596,13 +596,13 @@ world.afterEvents.entityHurt.subscribe(({ damageSource, hurtEntity, damage }) =>
     const currentTick = system.currentTick;
     const player = damageSource.damagingEntity;
     
-    if (!player && damageSource.cause !== "override" && damage >= 0) {
+    if (!player && damageSource.cause !== 'override' && damage >= 0) {
         try {
             if (!hurtEntity.__playerHit)
                 hurtEntity.applyKnockback({x: 0, z: 0}, hurtEntity.getVelocity().y);
         } catch (e) {
-            const debugMode = world.getDynamicProperty("debug_mode");
-            if (debugMode) debug("Error during knockback: " + e + ", knockback skipped");
+            const debugMode = world.getDynamicProperty('debug_mode');
+            if (debugMode) debug('Error during knockback: ' + e + ', knockback skipped');
         }
     }
 
