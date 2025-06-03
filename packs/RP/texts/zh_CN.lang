@@ -1,41 +1,41 @@
 pack.name=§3Sweep §f'N §6Slash §f- Resource Pack
-pack.description=Converts Bedrock Edition's combat into Java Edition's 1.9+ combat.
+pack.description=将基岩版的战斗机制改为Java版1.9+的战斗机制
 
 attribute.name.generic.attackDamage=§r
 
-sweepnslash.tipmessage=§fType §e%s §fto open §3Sweep §f'N §6Slash §fconfiguration menu
-sweepnslash.configmenutitle=Sweep 'N Slash Configuration
+sweepnslash.tipmessage=§f输入 §e%s §f打开§3Sweep §f'N §6Slash §f设置菜单
+sweepnslash.configmenutitle=Sweep 'N Slash设置菜单
 sweepnslash.toggleaddon=Toggle Add-On
 sweepnslash.shieldbreakspecial=Require Charged Axes to Break Shields
 sweepnslash.toggledebugmode=Toggle Debug Mode
-sweepnslash.excludepetfromsweep=Ignore Tamed Pets On Sweep
-sweepnslash.tipmessagetoggle=Tip Message Upon Joining
-sweepnslash.indicatorstyle=Attack Indicator
-sweepnslash.crosshair=Crosshair
-sweepnslash.hotbar=Hotbar
-sweepnslash.geyser=Geyser
-sweepnslash.none=None
-sweepnslash.sweepparticles=Sweep Particles
-sweepnslash.enchantedhitparticles=Enchanted Hit Particles
-sweepnslash.damageindicatorparticles=Damage Indicator Particles
-sweepnslash.critparticles=Critical Hit Particles
-sweepnslash.critsounds=Critical Hit Sounds
-sweepnslash.sweepRGBtitle=Sweep RGB Color
+sweepnslash.excludepetfromsweep=横扫时不误伤宠物
+sweepnslash.tipmessagetoggle=进入游戏时加载提示信息
+sweepnslash.indicatorstyle=攻击冷却提示
+sweepnslash.crosshair=准星位置
+sweepnslash.hotbar=物品栏位置
+sweepnslash.geyser=Geyser模式
+sweepnslash.none=无
+sweepnslash.sweepparticles=横扫粒子
+sweepnslash.enchantedhitparticles=附魔武器攻击粒子
+sweepnslash.damageindicatorparticles=伤害显示粒子
+sweepnslash.critparticles=暴击粒子
+sweepnslash.critsounds=暴击音效
+sweepnslash.sweepRGBtitle=横扫颜色(RGB)
 sweepnslash.nan=§cNaN(Not a Number) value has been registered in sweep RGB color. Falling back to 0.
-sweepnslash.saveconfig=Save
-sweepnslash.canceled=§cConfiguration canceled.
-sweepnslash.saved=§aConfiguration saved.
-sweepnslash.configopened=Configuration menu has been opened outside the chat screen.
-sweepnslash.bowhitsound=Bow Hit Sound
+sweepnslash.saveconfig=保存
+sweepnslash.canceled=§c已取消保存
+sweepnslash.saved=§a已保存设置
+sweepnslash.configopened=设置菜单已在聊天框之外打开
+sweepnslash.bowhitsound=弓箭命中音效
 sweepnslash.operatortoggleheader=Advanced Operator Toggles
-sweepnslash.generaltoggleheader=General Toggles
-sweepnslash.personaltoggleheader=Personal Settings
-sweepnslash.currentversion=Current version:§e %s
+sweepnslash.generaltoggleheader=通用
+sweepnslash.personaltoggleheader=自定义
+sweepnslash.currentversion=当前版本:§e %s
 
 sweepnslash.shieldbreakspecial.tooltip=If enabled, axes disable shields only if the attacker's cooldown charge is above 84.8%%.
 sweepnslash.toggledebugmode.tooltip=Debug mode toggle for developers and creators. Prints various informations in Content Log, and enables DPS tester ('sns:testdamage' script event).
-sweepnslash.excludepetfromsweep.tooltip=If enabled, sweep attacks will not damage tamed pets.
-sweepnslash.indicatorstyle.tooltip=Changes Attack Indicator UI. If you're having issues with the addon's UI, try using Geyser.
+sweepnslash.excludepetfromsweep.tooltip=启用后，横扫攻击将不会对宠物造成伤害
+sweepnslash.indicatorstyle.tooltip=改变冷却提示的UI。如果使用该模组时UI有问题的话，建议用Geyser模式
 
 
 
