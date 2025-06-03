@@ -141,7 +141,7 @@ export class CombatManager {
         };
 
         player.__rawDamage = dmg.raw;
-		target.__playerHit = true;
+        target.__playerHit = true;
 
         const iframes =
             (timeValid || (dmg.raw > lastAttack.rawDamage && dmg.final > lastAttack.damage)) &&
