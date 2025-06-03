@@ -5,14 +5,14 @@ attribute.name.generic.attackDamage=§r
 
 sweepnslash.tipmessage=§f输入 §e%s §f打开§3Sweep §f'N §6Slash §f设置菜单
 sweepnslash.configmenutitle=Sweep 'N Slash设置菜单
-sweepnslash.toggleaddon=Toggle Add-On
-sweepnslash.shieldbreakspecial=Require Charged Axes to Break Shields
-sweepnslash.toggledebugmode=Toggle Debug Mode
-sweepnslash.excludepetfromsweep=横扫时不误伤宠物
+sweepnslash.toggleaddon=切换为Add-On模式
+sweepnslash.shieldbreakspecial=需蓄力斧破盾
+sweepnslash.toggledebugmode=切换为调试模式
+sweepnslash.excludepetfromsweep=横扫攻击时不误伤宠物
 sweepnslash.tipmessagetoggle=进入游戏时加载提示信息
-sweepnslash.indicatorstyle=攻击冷却提示
-sweepnslash.crosshair=准星位置
-sweepnslash.hotbar=物品栏位置
+sweepnslash.indicatorstyle=攻击指示器
+sweepnslash.crosshair=十字准星下
+sweepnslash.hotbar=快捷栏旁
 sweepnslash.geyser=Geyser模式
 sweepnslash.none=无
 sweepnslash.sweepparticles=横扫粒子
@@ -20,7 +20,7 @@ sweepnslash.enchantedhitparticles=附魔武器攻击粒子
 sweepnslash.damageindicatorparticles=伤害显示粒子
 sweepnslash.critparticles=暴击粒子
 sweepnslash.critsounds=暴击音效
-sweepnslash.sweepRGBtitle=横扫颜色(RGB)
+sweepnslash.sweepRGBtitle=横扫粒子颜色(RGB)
 sweepnslash.nan=§cNaN(Not a Number) value has been registered in sweep RGB color. Falling back to 0.
 sweepnslash.saveconfig=保存
 sweepnslash.canceled=§c已取消保存
@@ -32,10 +32,10 @@ sweepnslash.generaltoggleheader=通用
 sweepnslash.personaltoggleheader=自定义
 sweepnslash.currentversion=当前版本:§e %s
 
-sweepnslash.shieldbreakspecial.tooltip=If enabled, axes disable shields only if the attacker's cooldown charge is above 84.8%%.
-sweepnslash.toggledebugmode.tooltip=Debug mode toggle for developers and creators. Prints various informations in Content Log, and enables DPS tester ('sns:testdamage' script event).
+sweepnslash.shieldbreakspecial.tooltip=启用后，只有在攻击冷却完成度大于84.8%时斧头可以破盾
+sweepnslash.toggledebugmode.tooltip=给开发者准备的调试模式。所有信息将显示在内容日志中，并且启用DPS测试（'sns:testdamage'的脚本信息）
 sweepnslash.excludepetfromsweep.tooltip=启用后，横扫攻击将不会对宠物造成伤害
-sweepnslash.indicatorstyle.tooltip=改变冷却提示的UI。如果使用该模组时UI有问题的话，建议用Geyser模式
+sweepnslash.indicatorstyle.tooltip=改变攻击显示器的UI。如果使用该模组时UI有问题的话，建议用Geyser模式
 
 
 
