@@ -554,17 +554,17 @@ world.afterEvents.projectileHitEntity.subscribe((event) => {
 });
 
 world.afterEvents.entitySpawn.subscribe(({ cause, entity }) => {
-	if (world.getDynamicProperty('addon_toggle') == false) return;
-	if (!entity?.isValid) return;
+    if (world.getDynamicProperty('addon_toggle') == false) return;
+    if (!entity?.isValid) return;
     
-	const projectileComp = entity?.getComponent('projectile');
-	const owner = projectileComp?.owner;
+    const projectileComp = entity?.getComponent('projectile');
+    const owner = projectileComp?.owner;
     if (!owner) return;
     
-	if (owner instanceof Entity) {
-		const ownerVel = owner.getVelocity();
-		entity.applyImpulse(ownerVel);
-	}
+    if (owner instanceof Entity) {
+        const ownerVel = owner.getVelocity();
+        entity.applyImpulse(ownerVel);
+    }
 });
 
 world.afterEvents.playerSpawn.subscribe(({ player }) => {
