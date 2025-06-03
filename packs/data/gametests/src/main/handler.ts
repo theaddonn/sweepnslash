@@ -8,6 +8,7 @@ import {
     Player,
     CustomCommandStatus,
     CustomCommandSource,
+    EntityDamageCause
 } from '@minecraft/server';
 import { ModalFormData } from '@minecraft/server-ui';
 import { CombatManager } from './class.js';
@@ -596,7 +597,7 @@ world.afterEvents.entityHurt.subscribe(({ damageSource, hurtEntity, damage }) =>
     const currentTick = system.currentTick;
     const player = damageSource.damagingEntity;
     
-    if (!player && damageSource.cause !== 'override' && damage >= 0) {
+    if (!player && damageSource.cause !== EntityDamageCause.override && damage >= 0) {
         try {
             if (!hurtEntity.__playerHit)
                 hurtEntity.applyKnockback({x: 0, z: 0}, hurtEntity.getVelocity().y);
@@ -609,7 +610,7 @@ world.afterEvents.entityHurt.subscribe(({ damageSource, hurtEntity, damage }) =>
     hurtEntity.__playerHit = false;
     
     if (player instanceof Player) {
-        if (damageSource.cause === 'entityAttack') {
+        if (damageSource.cause === EntityDamageCause.entityAttack) {
             //const { stats } = player.getItemStats();
             //const shieldBlock = Check.shieldBlock(currentTick, player, hurtEntity, stats);
             //if (!shieldBlock)
@@ -619,7 +620,7 @@ world.afterEvents.entityHurt.subscribe(({ damageSource, hurtEntity, damage }) =>
                 time: currentTick,
             };
             healthParticle(hurtEntity, damage);
-        } else if (damageSource.cause === 'maceSmash') {
+        } else if (damageSource.cause === EntityDamageCause.maceSmash) {
             healthParticle(hurtEntity, damage);
         } else {
             hurtEntity.__lastAttack = {
