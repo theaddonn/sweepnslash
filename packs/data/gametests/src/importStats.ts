@@ -24,8 +24,8 @@ export const importStats: { items: WeaponStats[]; moduleName: string }[] = [
     { items: flintTools, moduleName: 'tcc_flint_tools' },
     { items: copperTools, moduleName: 'tcc_copper_expansion' },
     { items: vanillaSpears, moduleName: 'vanilla_spears' },
-    { items: alylicaDungeons, moduleName: 'alylica_dungeons' },
-    { items: trueWeapons, moduleName: 'true_wp' },
+    //{ items: alylicaDungeons, moduleName: 'alylica_dungeons' },
+    //{ items: trueWeapons, moduleName: 'true_wp' },
 ];
 
 /**
