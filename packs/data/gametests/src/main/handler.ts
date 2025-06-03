@@ -8,7 +8,8 @@ import {
     Player,
     CustomCommandStatus,
     CustomCommandSource,
-    EntityDamageCause
+    EntityDamageCause,
+    GameMode
 } from '@minecraft/server';
 import { ModalFormData } from '@minecraft/server-ui';
 import { CombatManager } from './class.js';
@@ -523,7 +524,7 @@ world.afterEvents.playerInteractWithBlock.subscribe(({ player, block }) => {
 world.afterEvents.entityHitBlock.subscribe(({ damagingEntity: player }) => {
     if (!(player instanceof Player)) return;
     if (world.getDynamicProperty('addon_toggle') == false) return;
-    if (player.getGameMode() === 'creative') return;
+    if (player.getGameMode() === GameMode.creative) return;
 
     const status = player.getStatus();
     status.lastShieldTime = system.currentTick;
