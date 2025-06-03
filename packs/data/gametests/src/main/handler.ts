@@ -583,14 +583,14 @@ world.afterEvents.entityHurt.subscribe(({ damageSource, hurtEntity, damage }) =>
     const player = damageSource.damagingEntity;
     
     if (!player && damageSource.cause !== "override" && damage >= 0) {
-		try {
-			if (!hurtEntity.__playerHit)
-			hurtEntity.applyKnockback({x: 0, z: 0}, hurtEntity.getVelocity().y)
-		} catch (e) {
+        try {
+            if (!hurtEntity.__playerHit)
+                hurtEntity.applyKnockback({x: 0, z: 0}, hurtEntity.getVelocity().y);
+        } catch (e) {
             const debugMode = world.getDynamicProperty("debug_mode");
-		    if (debugMode) debug("Error during knockback: " + e + ", knockback skipped");
+            if (debugMode) debug("Error during knockback: " + e + ", knockback skipped");
         }
-	}
+    }
 
     hurtEntity.__playerHit = false;
     
