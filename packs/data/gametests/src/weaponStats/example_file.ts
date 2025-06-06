@@ -41,6 +41,8 @@ import { WeaponStats } from '../importStats';
 		critAttack, sweep, sprintKnockback will *force* those attacks regardless of condition if set to true, or force disable if false
 		sweepLevel is basically level of Sweeping Edge enchantment effect (1 by default)
 		cancelDurability will cancel durability reduction if set to true
+        regularKnockback defines the attack knockback distance in blocks without knockback enchantment
+        enchantedKnockback is the same as regularKnockback, but with knockback enchantment or sprint knockback
 		sweepLocation takes Vector3, changes where sweep attack radius is located at (target's location by default)
 		sweepRadius changes the distance of sweep attack radius in blocks
 		sweepParticle, critParticle, sweepSound, critSound string changes the particle and sound
