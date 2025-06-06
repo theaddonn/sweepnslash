@@ -109,6 +109,10 @@ export type WeaponStats = {
         sweepLevel?: number;
         /** Cancel durability reduction if true. */
         cancelDurability?: boolean;
+        /** Override regular attack knockback value, distance in blocks. */
+        regularKnockback?: number;
+        /** Override enchanted knockback value, distance in blocks. */
+        enchantedKnockback?: number;
         /** Override sweep attack location (default: target's location). */
         sweepLocation?: { x: number; y: number; z: number };
         /** Override sweep attack radius (in blocks). */
@@ -133,8 +137,6 @@ export type WeaponStats = {
         sweepOffset?: { x: number; y: number; z: number };
         /** Offset for crit particle. */
         critOffset?: { x: number; y: number; z: number };
-        /** Override enchanted knockback value. */
-        enchantedKnockback?: number;
     } | void;
     /**
      * Optional function to run after the attack logic.
