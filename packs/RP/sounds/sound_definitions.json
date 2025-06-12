@@ -149,6 +149,14 @@
                 }
             ]
         },
+        "game.player.attack.strong": {
+            "sounds": [
+                {
+                    "name": "sounds/mob/player/attack/weak1",
+                    "volume": 0
+                }
+            ]
+        },
         "game.player.attack.nodamage": {
             "sounds": [
                 {
