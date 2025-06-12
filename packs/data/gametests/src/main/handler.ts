@@ -6,6 +6,7 @@ import {
     world,
     system,
     Player,
+    Entity,
     CustomCommandStatus,
     CustomCommandSource,
     EntityDamageCause,
