@@ -145,7 +145,7 @@ export class CombatManager {
 
         const iframes =
             (timeValid || (dmg.raw > lastAttack.rawDamage && dmg.final > lastAttack.damage)) &&
-            !(target instanceof Player && target.getGameMode() == GameMode.creative);
+            !(target instanceof Player && target.getGameMode() == GameMode.Creative);
         if (iframes) {
             // Apply sweeping
             sweep = Check.sweep(
