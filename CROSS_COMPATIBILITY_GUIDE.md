@@ -54,6 +54,6 @@ const weaponStats = [
 
 If the stats are not importing, turn on Debug Mode and reload the world to see if the stats are importing correctly.
 
-**NOTE:** Sweep 'N Slash uses 2.0.0-beta module for @minecraft/server. This means IPC exported functions are required to follow 2.0.0-beta formats.
+**NOTE:** Sweep 'N Slash uses 2.1.0-beta module for @minecraft/server. This means IPC exported functions are required to follow 2.0.0-beta formats.
 
 (Credits to Hog554 and OmniacDev for the help!)
