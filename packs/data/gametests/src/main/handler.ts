@@ -82,7 +82,7 @@ world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
                 rawtext: [
                     {
                         translate: 'sweepnslash.tipmessage',
-                        with: ['!' + configCommand],
+                        with: ['/' + configCommand],
                     },
                     { text: '\n' },
                     {
@@ -281,18 +281,18 @@ function configForm(player) {
     });
 }
 
-// Config menu opener
-world.beforeEvents.chatSend.subscribe((event) => {
-    const { message, sender } = event;
-    if (sender instanceof Player && message == '!' + configCommand) {
-        event.cancel = true;
-        system.run(() => {
-            sender.sendMessage({ translate: 'sweepnslash.configopened' });
-            sender.runCommand('sns:config');
-            //configForm(sender)
-        });
-    }
-});
+// // Config menu opener
+// world.beforeEvents.chatSend.subscribe((event) => {
+//     const { message, sender } = event;
+//     if (sender instanceof Player && message == '!' + configCommand) {
+//         event.cancel = true;
+//         system.run(() => {
+//             sender.sendMessage({ translate: 'sweepnslash.configopened' });
+//             sender.runCommand('sns:config');
+//             //configForm(sender)
+//         });
+//     }
+// });
 
 // Config menu opener, with custom commands
 system.beforeEvents.startup.subscribe((init) => {
@@ -300,6 +300,7 @@ system.beforeEvents.startup.subscribe((init) => {
         name: configCommand,
         description: "Opens up configuration menu for Sweep 'N Slash.",
         permissionLevel: 0,
+        cheatsRequired: false,
     };
     init.customCommandRegistry.registerCommand(configMenuCommand, configFormOpener);
 });
