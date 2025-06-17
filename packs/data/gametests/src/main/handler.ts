@@ -525,7 +525,7 @@ world.afterEvents.playerInteractWithBlock.subscribe(({ player, block }) => {
 world.afterEvents.entityHitBlock.subscribe(({ damagingEntity: player }) => {
     if (!(player instanceof Player)) return;
     if (world.getDynamicProperty('addon_toggle') == false) return;
-    if (player.getGameMode() === GameMode.creative) return;
+    if (player.getGameMode() === GameMode.Creative) return;
 
     const status = player.getStatus();
     status.lastShieldTime = system.currentTick;

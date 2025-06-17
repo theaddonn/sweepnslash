@@ -507,7 +507,7 @@ export class Check {
 
     // Durability reduction code.
     static durability(player, equippableComp, item, stats) {
-        if (player.getGameMode() === GameMode.creative) return;
+        if (player.getGameMode() === GameMode.Creative) return;
         const durabilityComp = item?.getComponent('durability');
         if (!durabilityComp || !stats) return;
 
@@ -589,7 +589,7 @@ export class Check {
                 map,
                 offset
             );
-            if (!(target instanceof Player && target.getGameMode() === GameMode.creative))
+            if (!(target instanceof Player && target.getGameMode() === GameMode.Creative))
                 selectiveSound(player.location, 'critSound', dimension, sound);
         }
         return isValid;
@@ -818,7 +818,7 @@ export class Check {
         let angle = false;
         let specialValid = true;
 
-        if (target instanceof Player && target.getGameMode() == GameMode.creative) return false;
+        if (target instanceof Player && target.getGameMode() == GameMode.Creative) return false;
 
         if (world.getDynamicProperty('shieldBreakSpecial') && player instanceof Player)
             specialValid = Check.specialValid(currentTick, player, stats);
