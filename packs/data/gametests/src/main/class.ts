@@ -191,10 +191,12 @@ export class CombatManager {
             if (
                 status.mace === false &&
                 !inanimate &&
-                dmg.final > 0 &&
-                !beforeEffect?.cancelDurability
+                dmg.final > 0
             ) {
-                Check.durability(player, equippableComp, item, stats);
+                if (player.getGameMode() !== GameMode.Creative) {
+                    player.setExhaustion(player.getExhaustion() + 0.1);
+                }
+                if (!beforeEffect?.cancelDurability) Check.durability(player, equippableComp, item, stats);
             }
 
             // Apply knockback
