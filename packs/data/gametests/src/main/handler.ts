@@ -331,6 +331,8 @@ system.runInterval(() => {
     const saturationHealing = world.getDynamicProperty('saturationHealing');
     const currentTick = system.currentTick;
 
+    if (saturationHealing && world.gameRules.naturalRegeneration == true) world.gameRules.naturalRegeneration = false;
+
     for (const player of world.getAllPlayers()) {
         const status = player.getStatus();
         const { item, stats } = player.getItemStats();
@@ -420,8 +422,6 @@ system.runInterval(() => {
             const saturationComp = player.getComponent("player.saturation");
             player.setSaturation(clampNumber(saturation + ((saturationEffect.amplifier + 1) * 2), saturationComp?.effectiveMin, saturationComp?.effectiveMax));
         }
-
-        if (saturationHealing && world.gameRules.naturalRegeneration == true) world.gameRules.naturalRegeneration = false;
 
         const canHeal =
             saturationHealing &&
