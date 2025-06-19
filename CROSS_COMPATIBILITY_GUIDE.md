@@ -10,9 +10,10 @@ Overwrite orders work the same as how you order RP/BP in the game. The topmost a
 
 ## 1. Adding stats in Sweep 'N Slash files
 
-In weaponStats folder, you can simply add entries in the existing files. Or if you want to import it from separate files, create a file in the 'weaponStats' folder and add an entry in the 'importStats' array inside the 'importStats.js'.
+In weaponStats folder, you can simply add entries in the existing files. Or if you want to import it from separate files, create a file in the 'weaponStats' folder and add an entry in the 'importStats' array inside the 'importStats.ts'. After that, compile the pack and the stats will be added in the pack.
+You can also manually add stats inside the already compiled pack, but it's not recommended.
 
-## 2. Adding stats from other addons
+## 2. Adding stats from other behavior packs (after compiling)
 
 First, install IPC for your addon from this website:
 https://github.com/OmniacDev/MCBE-IPC
