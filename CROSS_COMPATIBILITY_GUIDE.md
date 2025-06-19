@@ -19,6 +19,7 @@ First, install IPC for your addon from this website:
 https://github.com/OmniacDev/MCBE-IPC
 
 Or you can use the IPC built for Sweep 'N Slash if you don't know what you're doing. (IPC.zip)
+You can also use a complete IPC pack for better understanding. (IPC_example_pack.zip)
 
 Extract the zip file into scripts folder. After that, make a file or use an already existing file to define your stats on.
 
