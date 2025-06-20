@@ -28,12 +28,25 @@ In your stats file, import these:
 ```javascript
 import { WeaponStatsSerializer } from './IPC/weapon_stats.ipc';
 import { IPC, PROTO } from './IPC/ipc';
+import { world } from '@minecraft/server';
 ```
 
 And then, paste this into the stats file:
 
+- Script v1
 ```javascript
 world.afterEvents.worldInitialize.subscribe((event) => {
+    IPC.send(
+        'sweep-and-slash:register-weapons',
+        PROTO.Array(WeaponStatsSerializer),
+        weaponStats
+    );
+});
+```
+
+- Script v2
+```javascript
+world.afterEvents.worldLoad.subscribe((event) => {
     IPC.send(
         'sweep-and-slash:register-weapons',
         PROTO.Array(WeaponStatsSerializer),
