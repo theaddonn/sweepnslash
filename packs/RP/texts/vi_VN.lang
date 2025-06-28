@@ -16,32 +16,32 @@ sweepnslash.toggledebugmode.tooltip=Chế độ gỡ lỗi dành cho nhà phát 
 
 ## Server Toggles
 sweepnslash.servertoggleheader=Tùy Chọn Máy Chủ
-sweepnslash.shieldbreakspecial=Yêu Cầu Rìu Sạc Mới Phá Khiên
-sweepnslash.shieldbreakspecial.tooltip=Nếu bật, rìu chỉ vô hiệu hóa khiên khi thanh sạc đòn tấn công của người chơi vượt quá 84.8%%.
-sweepnslash.saturationhealing=Hồi Máu Bằng Saturation
-sweepnslash.saturationhealing.tooltip=Nếu bật, saturation sẽ được tiêu hao nhanh hơn để hồi máu. Điều này sẽ buộc gamerule Hồi Máu Tự Nhiên bị tắt.
+sweepnslash.shieldbreakspecial=Yêu Cầu Hồi Chiêu Cho Rìu Để Phá Khiên
+sweepnslash.shieldbreakspecial.tooltip=Nếu bật, rìu chỉ phá khiên khi hồi chiêu được 84.8%%.
+sweepnslash.saturationhealing=Hồi Máu Bằng Độ bão hoà
+sweepnslash.saturationhealing.tooltip=Nếu bật, độ bão hoà sẽ được tiêu hao nhanh hơn để hồi máu. Điều này sẽ buộc gamerule Hồi Máu Tự Nhiên bị tắt.
 
 ## General Toggles
 sweepnslash.generaltoggleheader=Tùy Chọn Chung
-sweepnslash.excludepetfromsweep=Bỏ Qua Thú Cưng Khi Chém
-sweepnslash.excludepetfromsweep.tooltip=Nếu bật, các đòn chém diện rộng sẽ không gây sát thương cho thú cưng đã thuần hóa.
+sweepnslash.excludepetfromsweep=Không Gây Sát Thương Cho Thú Cừng Bởi Quét Cạnh
+sweepnslash.excludepetfromsweep.tooltip=Nếu bật, các đòn quét cạnh sẽ không gây sát thương cho thú cưng đã thuần hóa.
 sweepnslash.tipmessagetoggle=Hiển Thị Tin Nhắn Gợi Ý Khi Tham Gia
 
 ## Personal Settings
 sweepnslash.personaltoggleheader=Cài Đặt Cá Nhân
-sweepnslash.indicatorstyle=Chỉ Báo Đòn Đánh
-sweepnslash.indicatorstyle.tooltip=Thay đổi giao diện chỉ báo đòn đánh. Nếu bạn gặp sự cố với UI của addon, hãy thử sử dụng Geyser.
-sweepnslash.crosshair=Tâm Nhắm
+sweepnslash.indicatorstyle=Kiểu hồi chiêu
+sweepnslash.indicatorstyle.tooltip=Thay đổi kiểu hồi chiêu. Nếu bạn gặp sự cố với UI của addon, hãy thử sử dụng hồi chiêu kiểu Bedrock.
+sweepnslash.crosshair=Tâm
 sweepnslash.hotbar=Thanh Công Cụ
 sweepnslash.geyser=Geyser
 sweepnslash.none=Không có
-sweepnslash.bowhitsound=Âm Thanh Khi Bắn Cung Trúng
-sweepnslash.sweepparticles=Hiệu Ứng Chém Diện Rộng
-sweepnslash.enchantedhitparticles=Hiệu Ứng Khi Trúng Bằng Vũ Khí Phép
-sweepnslash.damageindicatorparticles=Hiệu Ứng Chỉ Báo Sát Thương
+sweepnslash.bowhitsound=Âm Thanh Khi Bắn Cung Trúng Mục Tiêu
+sweepnslash.sweepparticles=Hiệu Ứng Quét Cạnh
+sweepnslash.enchantedhitparticles=Hiệu Ứng Khi Trúng Bằng Vũ Khí Phù Phép
+sweepnslash.damageindicatorparticles=Hiệu Ứng Hiển Thị Sát Thương
 sweepnslash.critparticles=Hiệu Ứng Đòn Chí Mạng
 sweepnslash.critsounds=Âm Thanh Đòn Chí Mạng
-sweepnslash.sweepRGBtitle=Màu RGB Cho Đòn Chém
+sweepnslash.sweepRGBtitle=Màu RGB Cho Đòn Quét Cạnh
 sweepnslash.saveconfig=Lưu
 
 sweepnslash.canceled=§cĐã hủy cấu hình.
