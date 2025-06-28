@@ -6,10 +6,10 @@ attribute.name.generic.attackDamage=§r
 sweepnslash.tipmessage=§fGõ §e%s §fđể mở menu cấu hình §3Sweep §f'N §6Slash§f
 sweepnslash.currentversion=Phiên bản hiện tại:§e %s
 
-sweepnslash.configmenutitle=Cấu Hình Sweep 'N Slash
+sweepnslash.configmenutitle=Cấu Hình Sweep 'N Slash (Vietnamese by pkonq)
 
 ## Advanced Operator Toggles
-sweepnslash.operatortoggleheader=Tùy Chọn Nâng Cao cho Operator
+sweepnslash.operatortoggleheader=Tùy Chọn Nâng Cao Cho Người Điều Hành
 sweepnslash.toggleaddon=Bật/Tắt Add-On
 sweepnslash.toggledebugmode=Bật/Tắt Chế Độ Gỡ Lỗi
 sweepnslash.toggledebugmode.tooltip=Chế độ gỡ lỗi dành cho nhà phát triển và người sáng tạo. Hiển thị thông tin trong Content Log, và kích hoạt trình kiểm tra DPS (sự kiện script 'sns:testdamage').
@@ -18,7 +18,7 @@ sweepnslash.toggledebugmode.tooltip=Chế độ gỡ lỗi dành cho nhà phát 
 sweepnslash.servertoggleheader=Tùy Chọn Máy Chủ
 sweepnslash.shieldbreakspecial=Yêu Cầu Hồi Chiêu Cho Rìu Để Phá Khiên
 sweepnslash.shieldbreakspecial.tooltip=Nếu bật, rìu chỉ phá khiên khi hồi chiêu được 84.8%%.
-sweepnslash.saturationhealing=Hồi Máu Bằng Độ bão hoà
+sweepnslash.saturationhealing=Hồi Máu Bằng Độ Bão Hoà
 sweepnslash.saturationhealing.tooltip=Nếu bật, độ bão hoà sẽ được tiêu hao nhanh hơn để hồi máu. Điều này sẽ buộc gamerule Hồi Máu Tự Nhiên bị tắt.
 
 ## General Toggles
@@ -33,7 +33,7 @@ sweepnslash.indicatorstyle=Kiểu hồi chiêu
 sweepnslash.indicatorstyle.tooltip=Thay đổi kiểu hồi chiêu. Nếu bạn gặp sự cố với UI của addon, hãy thử sử dụng hồi chiêu kiểu Bedrock.
 sweepnslash.crosshair=Tâm
 sweepnslash.hotbar=Thanh Công Cụ
-sweepnslash.geyser=Geyser
+sweepnslash.geyser=Kiểu Bedrock
 sweepnslash.none=Không có
 sweepnslash.bowhitsound=Âm Thanh Khi Bắn Cung Trúng Mục Tiêu
 sweepnslash.sweepparticles=Hiệu Ứng Quét Cạnh
